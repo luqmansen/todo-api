@@ -17,6 +17,9 @@ __pycache__/
 #env stuff
 .env
 
+#docker stuff
+docker/
+
 # Distribution / packaging
 .Python
 build/
