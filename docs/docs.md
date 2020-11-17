@@ -5,6 +5,10 @@ Todo API
 
 ## Indices
 
+* [Auth](#auth)
+
+  * [Get Token](#1-get-token)
+
 * [Category](#category)
 
   * [Create new category](#1-create-new-category)
@@ -20,10 +24,74 @@ Todo API
 
 * [User](#user)
 
-  * [profile](#1-profile)
+  * [Profile](#1-profile)
+  * [Register](#2-register)
 
 
 --------
+
+
+## Auth
+Auth related endpoints
+
+
+
+### 1. Get Token
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: {{server-address}}/auth/token/
+```
+
+
+
+***Body:***
+
+```js        
+{
+    "username": "testuser34",
+    "password": "test"
+}
+```
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Get Token (referesh and access)
+
+
+
+***Body:***
+
+```js        
+{
+    "username": "testuser34",
+    "password": "test"
+}
+```
+
+
+
+##### I. Example Response: Get Token (referesh and access)
+```js
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwNTgyODY5MiwianRpIjoiZGEyMTM5MTEyZjc3NGViZGI2ZWNiN2ZkMDZkYzE2ZGEiLCJ1c2VyX2lkIjo3fQ.i_DHzgeF-oDwwtaS_r2eGrlCv3a5JsyHdFUFJhxaOQk",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NzQyMjkyLCJqdGkiOiJjNWE0YzQwYzk3YTM0MTk1YTIxNmQ5MGVjYzU5MThiMiIsInVzZXJfaWQiOjd9.r0EYXgcnHxdyxcO0voC8hWkH7E1tk1Pc1i_Ci1Hfo8I"
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
 
 
 ## Category
@@ -423,7 +491,7 @@ URL: {{server-address}}/api/notes/2/
 
 
 
-### 1. profile
+### 1. Profile
 
 
 Get user profile
@@ -434,11 +502,152 @@ Get user profile
 ```bash
 Method: GET
 Type: 
-URL: http://0.0.0.0:9999/api/user/
+URL: {{server-address}}/api/user/me/
 ```
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Profile
+
+
+
+##### I. Example Response: Profile
+```js
+{
+    "username": "testuser34",
+    "first_name": "test",
+    "last_name": "user 4"
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+##### II. Example Request: Get User Profile
+
+
+
+##### II. Example Response: Get User Profile
+```js
+{
+    "username": "testuser34",
+    "first_name": "test",
+    "last_name": "user 4"
+}
+```
+
+
+***Status Code:*** 200
+
+<br>
+
+
+
+### 2. Register
+
+
+Register new user
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: {{server-address}}/api/user/
+```
+
+
+
+***Body:***
+
+```js        
+{
+    "username": "testuser2",
+    "password": "test",
+    "first_name": "test",
+    "last_name": "user"
+}
+```
+
+
+
+***More example Requests/Responses:***
+
+
+##### I. Example Request: Create Account Success
+
+
+
+***Body:***
+
+```js        
+{
+    "username": "testuser34",
+    "password": "test",
+    "first_name": "test",
+    "last_name": "user 4"
+}
+```
+
+
+
+##### I. Example Response: Create Account Success
+```js
+{
+    "username": "testuser34",
+    "first_name": "test",
+    "last_name": "user 4"
+}
+```
+
+
+***Status Code:*** 201
+
+<br>
+
+
+
+##### II. Example Request: Create Account Duplicate Username
+
+
+
+***Body:***
+
+```js        
+{
+    "username": "testuser",
+    "password": "test",
+    "first_name": "test",
+    "last_name": "user"
+}
+```
+
+
+
+##### II. Example Response: Create Account Duplicate Username
+```js
+{
+    "username": [
+        "A user with that username already exists."
+    ]
+}
+```
+
+
+***Status Code:*** 400
+
+<br>
 
 
 
 ---
 [Back to top](#todo-api)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-11-17 22:02:55 by [docgen](https://github.com/thedevsaddam/docgen)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-11-18 06:41:25 by [docgen](https://github.com/thedevsaddam/docgen)

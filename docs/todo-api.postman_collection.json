@@ -10,14 +10,14 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "profile",
+					"name": "Profile",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NzQyMjkyLCJqdGkiOiJjNWE0YzQwYzk3YTM0MTk1YTIxNmQ5MGVjYzU5MThiMiIsInVzZXJfaWQiOjd9.r0EYXgcnHxdyxcO0voC8hWkH7E1tk1Pc1i_Ci1Hfo8I",
 									"type": "string"
 								}
 							]
@@ -25,24 +25,322 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://0.0.0.0:9999/api/user/",
-							"protocol": "http",
+							"raw": "{{server-address}}/api/user/me/",
 							"host": [
-								"0",
-								"0",
-								"0",
-								"0"
+								"{{server-address}}"
 							],
-							"port": "9999",
+							"path": [
+								"api",
+								"user",
+								"me",
+								""
+							]
+						},
+						"description": "Get user profile"
+					},
+					"response": [
+						{
+							"name": "Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://0.0.0.0:9999/api/user/me",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "9999",
+									"path": [
+										"api",
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 23:33:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"testuser34\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user 4\"\n}"
+						},
+						{
+							"name": "Get User Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/user/me",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 23:34:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"testuser34\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user 4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser2\",\n    \"password\": \"test\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-address}}/api/user/",
+							"host": [
+								"{{server-address}}"
+							],
 							"path": [
 								"api",
 								"user",
 								""
 							]
 						},
-						"description": "Get user profile"
+						"description": "Register new user"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Account Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"testuser34\",\n    \"password\": \"test\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user 4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-address}}/api/user/register/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 23:29:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"testuser34\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user 4\"\n}"
+						},
+						{
+							"name": "Create Account Duplicate Username",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"test\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-address}}/api/user/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 15:39:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": [\n        \"A user with that username already exists.\"\n    ]\n}"
+						}
+					]
 				}
 			],
 			"event": [
@@ -72,6 +370,95 @@
 		{
 			"name": "Note",
 			"item": [
+				{
+					"name": "Get Note List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-address}}/api/notes",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Note List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/notes",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:48:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"is_complete\": false,\n        \"created_at\": \"2020-11-17T14:35:26.082933Z\",\n        \"updated_at\": \"2020-11-17T14:35:26.083036Z\",\n        \"deadline\": \"2020-11-17T14:04:34Z\",\n        \"title\": \"Today's Note\",\n        \"content\": \"Nothing really matters\",\n        \"category\": 1\n    }\n]"
+						}
+					]
+				},
 				{
 					"name": "Create new notes",
 					"request": {
@@ -178,184 +565,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": 2,\n    \"is_complete\": false,\n    \"created_at\": \"2020-11-17T14:35:26.082933Z\",\n    \"updated_at\": \"2020-11-17T14:35:26.083036Z\",\n    \"deadline\": \"2020-11-17T14:04:34Z\",\n    \"title\": \"Today's Note\",\n    \"content\": \"Nothing really matters\",\n    \"category\": 1\n}"
-						}
-					]
-				},
-				{
-					"name": "Delete Notes",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{server-address}}/api/notes/2/",
-							"host": [
-								"{{server-address}}"
-							],
-							"path": [
-								"api",
-								"notes",
-								"2",
-								""
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Delete Notes",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{server-address}}/api/notes/2/",
-									"host": [
-										"{{server-address}}"
-									],
-									"path": [
-										"api",
-										"notes",
-										"2",
-										""
-									]
-								}
-							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 17 Nov 2020 15:01:30 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "WSGIServer/0.2 CPython/3.8.5"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept"
-								},
-								{
-									"key": "Allow",
-									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "same-origin"
-								}
-							],
-							"cookie": [],
-							"body": null
-						}
-					]
-				},
-				{
-					"name": "Get Note List",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{server-address}}/api/notes",
-							"host": [
-								"{{server-address}}"
-							],
-							"path": [
-								"api",
-								"notes"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get Note List",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{server-address}}/api/notes",
-									"host": [
-										"{{server-address}}"
-									],
-									"path": [
-										"api",
-										"notes"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Tue, 17 Nov 2020 14:48:08 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "WSGIServer/0.2 CPython/3.8.5"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept"
-								},
-								{
-									"key": "Allow",
-									"value": "GET, POST, HEAD, OPTIONS"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Length",
-									"value": "221"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "same-origin"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"id\": 2,\n        \"is_complete\": false,\n        \"created_at\": \"2020-11-17T14:35:26.082933Z\",\n        \"updated_at\": \"2020-11-17T14:35:26.083036Z\",\n        \"deadline\": \"2020-11-17T14:04:34Z\",\n        \"title\": \"Today's Note\",\n        \"content\": \"Nothing really matters\",\n        \"category\": 1\n    }\n]"
 						}
 					]
 				},
@@ -582,6 +791,95 @@
 							"body": "{\n    \"id\": 2,\n    \"is_complete\": false,\n    \"created_at\": \"2020-11-17T15:00:56.018808Z\",\n    \"updated_at\": \"2020-11-17T15:00:56.018833Z\",\n    \"deadline\": \"2020-11-17T14:04:34Z\",\n    \"title\": \"Yesterday's Note\",\n    \"content\": \"Everything really matters\",\n    \"category\": 2\n}"
 						}
 					]
+				},
+				{
+					"name": "Delete Notes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server-address}}/api/notes/2/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Notes",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/notes/2/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 15:01:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -589,6 +887,97 @@
 		{
 			"name": "Category",
 			"item": [
+				{
+					"name": "Get All Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-address}}/api/category/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/category/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:23:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"School\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Shopping List\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"jackpot\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"School\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"School\"\n    }\n]"
+						}
+					]
+				},
 				{
 					"name": "Create new category",
 					"request": {
@@ -698,48 +1087,62 @@
 							"body": "{\n    \"id\": 5,\n    \"name\": \"School\"\n}"
 						}
 					]
-				},
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
 				{
-					"name": "Get All Category",
+					"name": "Get Token",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser34\",\n    \"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{server-address}}/api/category/",
+							"raw": "{{server-address}}/auth/token/",
 							"host": [
 								"{{server-address}}"
 							],
 							"path": [
-								"api",
-								"category",
+								"auth",
+								"token",
 								""
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Get All Category",
+							"name": "Get Token (referesh and access)",
 							"originalRequest": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"testuser34\",\n    \"password\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{server-address}}/api/category/",
+									"raw": "{{server-address}}/auth/token/",
 									"host": [
 										"{{server-address}}"
 									],
 									"path": [
-										"api",
-										"category",
+										"auth",
+										"token",
 										""
 									]
 								}
@@ -750,7 +1153,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Tue, 17 Nov 2020 14:23:52 GMT"
+									"value": "Tue, 17 Nov 2020 23:31:32 GMT"
 								},
 								{
 									"key": "Server",
@@ -766,7 +1169,7 @@
 								},
 								{
 									"key": "Allow",
-									"value": "GET, POST, HEAD, OPTIONS"
+									"value": "POST, OPTIONS"
 								},
 								{
 									"key": "X-Frame-Options",
@@ -774,7 +1177,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "134"
+									"value": "438"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -786,11 +1189,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"School\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Shopping List\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"jackpot\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"School\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"School\"\n    }\n]"
+							"body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYwNTgyODY5MiwianRpIjoiZGEyMTM5MTEyZjc3NGViZGI2ZWNiN2ZkMDZkYzE2ZGEiLCJ1c2VyX2lkIjo3fQ.i_DHzgeF-oDwwtaS_r2eGrlCv3a5JsyHdFUFJhxaOQk\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NzQyMjkyLCJqdGkiOiJjNWE0YzQwYzk3YTM0MTk1YTIxNmQ5MGVjYzU5MThiMiIsInVzZXJfaWQiOjd9.r0EYXgcnHxdyxcO0voC8hWkH7E1tk1Pc1i_Ci1Hfo8I\"\n}"
 						}
 					]
 				}
 			],
+			"description": "Auth related endpoints",
 			"protocolProfileBehavior": {}
 		}
 	],
