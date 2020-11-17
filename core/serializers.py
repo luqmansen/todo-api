@@ -11,13 +11,16 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class NotesSerializer(serializers.ModelSerializer):
+    is_complete = serializers.BooleanField(required=False)
+
     class Meta:
         model = Notes
-        fields = '__all__'
+        exclude = ['user']
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        exclude = ['user']
+
 

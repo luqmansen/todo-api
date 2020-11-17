@@ -1,0 +1,798 @@
+{
+	"info": {
+		"_postman_id": "048aa786-033b-4ac6-9bfc-882399216581",
+		"name": "todo-api",
+		"description": "Todo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:9999/api/user/",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "9999",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						},
+						"description": "Get user profile"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ed685004-9e77-4968-b8a7-92659aa167b8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad80f5da-6663-44e9-a86f-c3604cf4122a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Note",
+			"item": [
+				{
+					"name": "Create new notes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deadline\": \"2020-11-17 14:04:34\",\n    \"title\": \"Today's Note\",\n    \"content\": \"Nothing really matters\",\n    \"category\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-address}}/api/notes/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create new notes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deadline\": \"2020-11-17 14:04:34\",\n    \"title\": \"Today's Note\",\n    \"content\": \"Nothing really matters\",\n    \"category\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-address}}/api/notes/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:35:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"is_complete\": false,\n    \"created_at\": \"2020-11-17T14:35:26.082933Z\",\n    \"updated_at\": \"2020-11-17T14:35:26.083036Z\",\n    \"deadline\": \"2020-11-17T14:04:34Z\",\n    \"title\": \"Today's Note\",\n    \"content\": \"Nothing really matters\",\n    \"category\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Notes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server-address}}/api/notes/2/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Notes",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/notes/2/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 15:01:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get Note List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-address}}/api/notes",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Note List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/notes",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:48:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"is_complete\": false,\n        \"created_at\": \"2020-11-17T14:35:26.082933Z\",\n        \"updated_at\": \"2020-11-17T14:35:26.083036Z\",\n        \"deadline\": \"2020-11-17T14:04:34Z\",\n        \"title\": \"Today's Note\",\n        \"content\": \"Nothing really matters\",\n        \"category\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Partial Update Note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Everything matters\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-address}}/api/notes/2/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								"2",
+								""
+							]
+						},
+						"description": "Only update specific field of note"
+					},
+					"response": [
+						{
+							"name": "Partial Update Note",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"Everything matters\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-address}}/api/notes/2/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:57:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"is_complete\": false,\n    \"created_at\": \"2020-11-17T14:57:18.526410Z\",\n    \"updated_at\": \"2020-11-17T14:57:18.526435Z\",\n    \"deadline\": \"2020-11-17T14:04:34Z\",\n    \"title\": \"Today's Note\",\n    \"content\": \"Everything matters\",\n    \"category\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Total Update Notes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"deadline\": \"2020-11-17 14:04:34\",\n    \"title\": \"Yesterday's Note\",\n    \"content\": \"Everything really matters\",\n    \"category\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-address}}/api/notes/2/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"notes",
+								"2",
+								""
+							]
+						},
+						"description": "Change all content of a notes"
+					},
+					"response": [
+						{
+							"name": "Total Update Notes",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"deadline\": \"2020-11-17 14:04:34\",\n    \"title\": \"Yesterday's Note\",\n    \"content\": \"Everything really matters\",\n    \"category\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-address}}/api/notes/2/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"notes",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 15:00:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"is_complete\": false,\n    \"created_at\": \"2020-11-17T15:00:56.018808Z\",\n    \"updated_at\": \"2020-11-17T15:00:56.018833Z\",\n    \"deadline\": \"2020-11-17T14:04:34Z\",\n    \"title\": \"Yesterday's Note\",\n    \"content\": \"Everything really matters\",\n    \"category\": 2\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create new category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"School\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server-address}}/api/category/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						},
+						"description": "Create new category for personal user"
+					},
+					"response": [
+						{
+							"name": "Create new category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"School\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server-address}}/api/category/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:22:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"name\": \"School\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1NjkzOTI5LCJqdGkiOiI2NzIyNmVlZDdlNDg0YzlhYTU4YTVjMDEzNWY1MWVlYiIsInVzZXJfaWQiOjF9.oo3hGmuYSIVqW2UoxbjP9UgvUAA3U88huWn6EAbItEE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server-address}}/api/category/",
+							"host": [
+								"{{server-address}}"
+							],
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server-address}}/api/category/",
+									"host": [
+										"{{server-address}}"
+									],
+									"path": [
+										"api",
+										"category",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 17 Nov 2020 14:23:52 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"School\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Shopping List\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"jackpot\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"School\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"School\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
