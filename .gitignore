@@ -6,6 +6,17 @@ __pycache__/
 # C extensions
 *.so
 
+#idea
+.idea/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/todo_api.iml
+
+#env stuff
+.env
+
 # Distribution / packaging
 .Python
 build/
