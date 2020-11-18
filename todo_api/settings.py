@@ -66,14 +66,13 @@ db_from_env = dj_database_url.config(
 )
 DATABASES = {'default': db_from_env}
 
-if os.getenv('ENV') not in ['PROD']:
+if 'test' in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
