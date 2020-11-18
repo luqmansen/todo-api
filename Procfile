@@ -1,1 +1,1 @@
-web: gunicorn todo_api.wsgi -c gunicorn.conf.py --log-file -%
+web: gunicorn todo_api.wsgi -c gunicorn.conf.py --log-file -
