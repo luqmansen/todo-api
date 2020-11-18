@@ -22,4 +22,5 @@ Todo API, a rip-offs from AnyDo and Google Task
     ```
 
 ## Docs
-Read the [API docs](docs/docs.md) here
+- Read the [API docs](docs/docs.md) here 
+- or the [Postman version](https://documenter.getpostman.com/view/8693382/TVeqe7eP) here
