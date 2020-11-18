@@ -3,9 +3,11 @@ import os
 import sys
 from datetime import timedelta
 from pathlib import Path
+from django.db.backends.mysql.base import DatabaseWrapper
+
+DatabaseWrapper.data_types['DateTimeField'] = 'datetime'
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
