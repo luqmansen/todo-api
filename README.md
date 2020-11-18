@@ -1,6 +1,9 @@
 # todo-api
 Todo API, a rip-offs from AnyDo and Google Task
 
+## Live Demo
+https://api-todo-srv.herokuapp.com/
+
 ## Requirements
 - Python 3.8+ (3.6+ might work, but idk, never tested)
 - Docker compose
