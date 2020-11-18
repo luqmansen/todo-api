@@ -1,8 +1,8 @@
+import dj_database_url
 import os
+import sys
 from datetime import timedelta
 from pathlib import Path
-
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -15,7 +15,6 @@ if os.getenv('ENV') in ['PROD']:
 else:
     ALLOWED_HOSTS = ["*"]
     DEBUG = True
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -66,14 +65,13 @@ db_from_env = dj_database_url.config(
 )
 DATABASES = {'default': db_from_env}
 
-if os.getenv('ENV') not in ['PROD']:
+if 'test' in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
