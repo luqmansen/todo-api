@@ -1,4 +1,6 @@
+from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
 
 
 class BaseModel(models.Model):
@@ -36,3 +38,14 @@ class Notes(BaseModel):
 
     def __str__(self):
         return self.title
+
+
+def seed_category(sender, instance: User, *args, **kwargs):
+    """Create "General" category for recently created user"""
+    Category.objects.create(
+        name="General",
+        user=instance
+    )
+
+
+post_save.connect(seed_category, sender=User)

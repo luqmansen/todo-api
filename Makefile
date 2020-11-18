@@ -5,7 +5,7 @@ migrate:
 	python manage.py makemigrations && python manage.py migrate
 
 db:
-	docker-compose
+	docker-compose up
 
 guni:
 	SECRET_KEY=123 gunicorn todo_api.wsgi -c gunicorn.conf.py --log-file -
