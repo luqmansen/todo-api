@@ -291,7 +291,7 @@ URL: {{server-address}}/api/notes/
 ```bash
 Method: DELETE
 Type: 
-URL: {{server-address}}/api/notes/2/
+URL: {{server-address}}/api/notes/3/
 ```
 
 
@@ -364,7 +364,7 @@ Only update specific field of note
 ```bash
 Method: PATCH
 Type: RAW
-URL: {{server-address}}/api/notes/2/
+URL: {{server-address}}/api/notes/4/
 ```
 
 
@@ -428,7 +428,7 @@ Change all content of a notes
 ```bash
 Method: PUT
 Type: RAW
-URL: {{server-address}}/api/notes/2/
+URL: {{server-address}}/api/notes/3/
 ```
 
 
@@ -561,7 +561,7 @@ Register new user
 ```bash
 Method: POST
 Type: RAW
-URL: {{server-address}}/api/user/
+URL: {{server-address}}/api/user/register/
 ```
 
 
@@ -570,10 +570,10 @@ URL: {{server-address}}/api/user/
 
 ```js        
 {
-    "username": "testuser2",
+    "username": "testuser34",
     "password": "test",
     "first_name": "test",
-    "last_name": "user"
+    "last_name": "user 4"
 }
 ```
 
@@ -650,4 +650,4 @@ URL: {{server-address}}/api/user/
 
 ---
 [Back to top](#todo-api)
-> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-11-18 06:41:25 by [docgen](https://github.com/thedevsaddam/docgen)
+> Made with &#9829; by [thedevsaddam](https://github.com/thedevsaddam) | Generated at: 2020-11-19 09:32:41 by [docgen](https://github.com/thedevsaddam/docgen)

@@ -178,7 +178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"testuser2\",\n    \"password\": \"test\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user\"\n}",
+							"raw": "{\n    \"username\": \"testuser34\",\n    \"password\": \"test\",\n    \"first_name\": \"test\",\n    \"last_name\": \"user 4\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,13 +186,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{server-address}}/api/user/",
+							"raw": "{{server-address}}/api/user/register/",
 							"host": [
 								"{{server-address}}"
 							],
 							"path": [
 								"api",
 								"user",
+								"register",
 								""
 							]
 						},
@@ -593,14 +594,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{server-address}}/api/notes/2/",
+							"raw": "{{server-address}}/api/notes/4/",
 							"host": [
 								"{{server-address}}"
 							],
 							"path": [
 								"api",
 								"notes",
-								"2",
+								"4",
 								""
 							]
 						},
@@ -705,14 +706,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{server-address}}/api/notes/2/",
+							"raw": "{{server-address}}/api/notes/3/",
 							"host": [
 								"{{server-address}}"
 							],
 							"path": [
 								"api",
 								"notes",
-								"2",
+								"3",
 								""
 							]
 						},
@@ -808,14 +809,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{server-address}}/api/notes/2/",
+							"raw": "{{server-address}}/api/notes/3/",
 							"host": [
 								"{{server-address}}"
 							],
 							"path": [
 								"api",
 								"notes",
-								"2",
+								"3",
 								""
 							]
 						}
