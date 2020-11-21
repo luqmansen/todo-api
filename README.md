@@ -1,5 +1,5 @@
-# todo-api
-Todo API, a rip-offs from AnyDo and Google Task
+# chems-todo-api
+This is chems's todo API. Chems wants to be organized.
 
 ## Live Demo
 https://api-todo-srv.herokuapp.com/
@@ -25,7 +25,7 @@ https://api-todo-srv.herokuapp.com/
     ```
 
 ## Docs
-- Read the [Swagger](http://api-todo-srv.herokuapp.com/swager/) here
+- Read the [Swagger](http://api-todo-srv.herokuapp.com/swagger/) here
 - or [Redoc](http://api-todo-srv.herokuapp.com/redoc/) here
-- or [Github docs](docs/docs.md) here 
-- or [Postman docs](https://documenter.getpostman.com/view/8693382/TVeqe7eP) here
+- or [Github docs](docs/docs.md) here (perhaps outdated)
+- or [Postman docs](https://documenter.getpostman.com/view/8693382/TVeqe7eP) here (perhaps outdated)
