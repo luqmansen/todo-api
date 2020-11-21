@@ -25,5 +25,7 @@ https://api-todo-srv.herokuapp.com/
     ```
 
 ## Docs
-- Read the [API docs](docs/docs.md) here 
-- or the [Postman version](https://documenter.getpostman.com/view/8693382/TVeqe7eP) here
+- Read the [Swagger](http://api-todo-srv.herokuapp.com/swager/) here
+- or [Redoc](http://api-todo-srv.herokuapp.com/redoc/) here
+- or [Github docs](docs/docs.md) here 
+- or [Postman docs](https://documenter.getpostman.com/view/8693382/TVeqe7eP) here
