@@ -25,6 +25,7 @@ urlpatterns = [
 
     path('notes/', note_list),
     path('notes/<int:pk>/', note_detail),
+    path('notes/category/<int:cat>/', NoteViewSet.as_view({'get': 'get_note_by_category'})),
 
     path('category/', category_list)
 ]
