@@ -32,12 +32,11 @@ class Notes(BaseModel):
         on_delete=models.CASCADE
     )
     deadline = models.DateTimeField()
-    title = models.CharField(max_length=255)
     content = models.TextField()
     is_complete = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.title
+        return self.content
 
 
 def seed_category(sender, instance: User, *args, **kwargs):
